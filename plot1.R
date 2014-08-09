@@ -32,9 +32,10 @@ library("sqldf")
 df4 <- read.csv.sql(txt_file,sep=";",header=TRUE, sql = 'select * from file where Date = "1/2/2007" or Date ="2/2/2007"')
 
 # Draw histogram
+png(filename=png_file, width = 480, height = 480)
 hist(df4$Global_active_power, main="Global Active Power",xlab="Global Active Power (kilowatts)", ylab="Frequency", col="Red")
 
 ## create png file
-dev.copy(png, file=png_file, height=480, width=480)
+ 
 dev.off()
 
